@@ -1,0 +1,89 @@
+<!--회원가입 화면-->
+<script>
+	init = function(){
+		jarallax = new Jarallax();
+    	jarallax.addAnimation('.backgroundimage3',[{progress: "0%", top:"0%"}, {progress: "100%", top: "-50%"}]);	
+		
+    	jarallax.addAnimation('#signup',[{progress: "0%", top:"30%"},{progress: "100%", top:"-100%"}]);
+	}
+</script>
+ 	  
+  	  <div class="content">
+   	<span class="backgroundimage3"></span>
+    <div id="signup" class="container">
+		<h1 id="signup1">회원가입</h1>
+		<br>
+		<!--아이디, 이메일이 중복될 경우 div에 에러가 생성된다.-->
+		{{#each alert}}
+		<div class="alert alert-danger">
+			{{this}}
+		</div>
+		{{/each}}
+
+		<form name="signup" method="post" action="/create">
+			<input type="hidden" name="lcode" value="06">
+			<textarea readonly cols="100" rows="10" style="resize:none" >
+제 1 조 (목적)
+이 약관은 먹는대로(이하 "사이트"라 합니다)에서 제공하는 인터넷서비스(이하 "서비스"라 합니다)의 이용 조건 및 절차에 관한 기본적인 사항을 규정함을 목적으로 합니다.
+
+
+제 2 조 (약관의 효력 및 변경)
+① 이 약관은 서비스 화면이나 기타의 방법으로 이용고객에게 공지함으로써 효력을 발생합니다.
+② 사이트는 이 약관의 내용을 변경할 수 있으며, 변경된 약관은 제1항과 같은 방법으로 공지 또는 통지함으로써 효력을 발생합니다.
+
+ 
+제 3 조 (용어의 정의)
+① 만든이:  가천대학교 컴퓨터공학과 201636015 윤지영
+	       가천대학교 컴퓨터공학과 201636028 이선민
+② 강의명: 모바일웹
+③ 목적: 모바일웹 기말프로젝트
+④ 제출일: 2018.12.10
+		</textarea>
+			<br>
+			
+	약관에 동의합니다. <input type="checkbox"  name="agree" class="agree" id="agree">
+	<!--체크박스를 체크하지 않으면 가입으로 넘어가지 않는다.-->
+	<br><br><br>
+			<div class="form-group row">
+				<label for="example-date-input" class="col-3 col-form-label" id="signup2">아이디</label>
+				<div class="col-xs-4">
+					<input name="userId" class="form-control " type="userId" />
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<label for="example-date-input" class="col-3 col-form-label" id="signup2">비밀번호</label>
+				<div class="col-xs-4">
+					<input name="user_password" id="user_password" class="form-control" type="password" />
+				</div>
+			</div>
+			<br>
+			<div class="form-group  row">
+				<label for="example-date-input" class="col-3 col-form-label" id="signup2">비밀번호확인</label>
+				<div class="col-xs-4">
+					<input type="password" class="form-control" name="reuserPwd" id="user_password2">
+				</div>
+			</div>
+			<!--user_password와 user_password2의 값을 비교해서 다르면 alert-danger가 생성, 같으면 alert-success이 생성된다. alert-danger이 나타나면 회원가입 버튼이 실행되지 않는다. -->
+			<div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div>
+			<div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
+			<br>
+			<div class="form-group row">
+				<label for="example-date-input" class="col-3 col-form-label" id="signup2">이메일</label>
+				 <div class="xs-4">
+					<input name="userEmail" class="form-control" type="email" />
+				</div>
+			</div>
+			<br>
+			<div class="form-group  row">
+				<label for="example-date-input" class="col-3 col-form-label" id="signup2">닉네임</label>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" name="userName" placeholder="">
+				</div>
+			</div>
+			<br>
+			<button type="button" id="btn-market-search" class="btn orange btn-submit" style="width:500px">회원가입</button>
+		<!--id, 이메일, 비밀번호, 닉네임 값들을 submit으로 create로 user를 저장.-->
+		</form>
+	</div>
+</div>

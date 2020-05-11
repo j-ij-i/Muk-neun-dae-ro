@@ -1,0 +1,83 @@
+<!--들어갈 컨텐츠 내용입니다-->
+<script>
+	var num = 0;
+	{{#each posts}}
+		num+=1;
+	{{/each}}
+	
+	init = function(){
+	var nu = num*5;
+jarallax = new Jarallax();
+    jarallax.addAnimation('.backgroundimage4',[{progress: "0%", top:"0%"}, {progress: "100%", top: "-50%"}]);	
+    jarallax.addAnimation('#board',[{progress: "0%", top:"10%"},{progress: "100%", top:"-"+200+"%"}]);
+}
+		
+</script>
+
+<!--게시글 리스트 화면-->
+<div class="content">
+	<span class="backgroundimage4"></span>
+	<div id="board" class="container">
+		<div>
+			<h1 id="boardmain">추천게시판</h1>
+		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr id="thth">
+					<th>글번호</th>
+					<th width="45%">제목</th>
+					<th>작성자</th>
+					<th>조회수</th>
+				</tr>
+				<!--모든 post 리스트를 출력한다.-->
+				{{#each posts}}
+				<tr id="th">
+					{{#if isNotice}}
+					<th>공지</th>
+					<th><a href="/postshow/{{this._id}}">{{this.title}}</a></th>
+					<!--게시글 제목을 누르면 _id의 정보를 postshow로 가져옴-->
+					<th>관리자</th>
+					<th>{{this.views}}</th>
+					{{/if}}
+				</tr>
+				{{/each}}
+			</thead>
+			<tbody>
+				<script>
+				var num = 0;
+ 		{{#each posts}}
+			{{#if isPost}}
+			num+=1;
+			{{/if}}
+		{{/each}}
+			document.write("{{#each posts}}");
+			document.write("<tr id='td'>");
+			document.write("{{#if isPost}}");
+			document.write("<td>"+num+"</td>");
+			document.write("<td><a href='/postshow/{{this._id}}'>");
+			document.write("{{this.title}}</a></td>");
+			document.write("<td>{{this.author}}</td>");	document.write("<td>{{this.views}}</td>");	document.write("{{/if}}");
+		    document.write("</tr>");
+			num -= 1;
+			document.write("{{/each}}");
+		//post리스트의 갯수를 받아서 post 글번호를 출력해준다.
+		</script>
+			</tbody>
+		</table>
+		<hr>
+			<form method="get" action="/posts/questres">
+           <select class="searchselect" name="search">
+            <option value="1">내용</option>
+            <option value="2">작성자</option>
+            <option value="3">제목</option>   
+     	 </select>
+     <input type="text" name="quest"  class="ipsearch2"  placeholder="검색어를 입력해주세요"> 	
+	<button type="submit" class="btn-warning" id="postbutton">검색</button>
+	<!--value값과 input값이 questres로 submit됨. -->
+			<a href="/postindex" id="postbutton" class="navbar-add orange pull-right" role="button">&nbsp;목록&nbsp;</a>
+			<a href="/postcreate" id="postbutton" class="navbar-add orange pull-right" role="button">&nbsp;글작성&nbsp;</a>
+			<a href="/postindex" id="postbutton" class="navbar-add orange pull-right" role="button">&nbsp;최신순&nbsp;</a>
+</form>
+
+	</div>
+</div>

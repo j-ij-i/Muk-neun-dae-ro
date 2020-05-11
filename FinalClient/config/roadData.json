@@ -1,0 +1,116 @@
+[
+  {
+    "start": "부산",
+    "end":"서울",
+    "routeName": "경부고속도로",
+    "routeCode":"0010"
+  },
+  {
+    "start": "순천",
+    "end":"부산",
+    "routeName": "남해고속도로",
+    "routeCode":"0100"
+  },
+   
+  {
+    "start": "무안",
+    "end":"광주",
+    "routeName": "무안광주고속도로",
+    "routeCode":"0120"
+  },
+
+  {
+    "start": "목포",
+    "end":"서울",
+    "routeName": "서해안고속도로",
+    "routeCode":"0150"
+  },
+    {
+    "start": "익산",
+    "end":"포항",
+    "routeName": "익산포항선",
+    "routeCode":"0200"
+  },
+    
+     {
+    "start": "순천",
+    "end":"논산",
+    "routeName": "호남고속도로",
+    "routeCode":"0250"
+  },
+     {
+    "start": "광양",
+    "end":"전주",
+    "routeName": "순천완주고속도로",
+    "routeCode":"0270"
+  },
+    {
+    "start": "상주",
+    "end":"청원",
+    "routeName": "당진영덕고속도로",
+    "routeCode":"0270"
+  },
+    
+     {
+    "start": "통영",
+    "end":"하남",
+    "routeName": "중부고속도로 (대전통영)",
+    "routeCode":"0350"
+  },
+    
+    {
+    "start": "평택",
+    "end":"제천",
+    "routeName": "평택제천고속도로",
+    "routeCode":"0400"
+  },
+    
+    {
+    "start": "마산",
+    "end":"양평",
+    "routeName": "중부내륙고속도로",
+    "routeCode":"0450"
+  },
+    
+    {
+    "start": "인천",
+    "end":"강릉",
+    "routeName": "영동고속도로",
+    "routeCode":"0500"
+  },
+    
+    {
+    "start": "부산",
+    "end":"춘천",
+    "routeName": "중앙고속도로",
+    "routeCode":"0550"
+  },
+    
+    {
+    "start": "서울",
+    "end":"양양",
+    "routeName": "서울양양고속도로",
+    "routeCode":"0600"
+  },
+    
+    {
+    "start": "동해",
+    "end":"속초",
+    "routeName": "동해고속도로",
+    "routeCode":"0650"
+  },
+    
+    {
+    "start": "퇴계원",
+    "end":"공주",
+    "routeName": "서울외곽순환고속도로",
+    "routeCode":"1000"
+  },
+    {
+    "start": "서천",
+    "end":"공주",
+    "routeName": "서천공주고속도로",
+    "routeCode":"1510"
+  } 
+    ]
+   

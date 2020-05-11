@@ -1,0 +1,53 @@
+<script>
+	init = function(){
+		jarallax = new Jarallax();
+    	jarallax.addAnimation('.backgroundimage4',[{progress: "0%", top:"0%"}, {progress: "100%", top: "-50%"}]);	
+    	jarallax.addAnimation('#board',[{progress: "0%", top:"10%"},{progress: "100%", top:"-"+200+"%"}]);
+}
+		
+</script>
+<!--게시글 업데이트-->
+<div class="content">
+	<span class="backgroundimage4"></span>
+	<div id="board" class="container">
+		<form method="post" action="/postupdate" class="form-horizontal" enctype="multipart/form-data">
+		<!-- _id의 작성자, 제목, 내용, 사진들을 input, textarea부분에 출력-->
+			<input type="hidden" class="form-control" name="id" value="{{post._id}}">
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">제목</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="title" value="{{post.title}}">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">작성자</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="author" value="{{post.author}}" readonly="readonly">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">내용</label>
+				<div class="col-sm-10">
+					<textarea id="tta" type="text" class="form-control" name="content">{{post.content}}</textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">사진</label>
+				<div class="col-sm-10">
+					<input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" class="btn green pull-right " onclick="location.href='/postindex'">목록</button>
+					<button type="button" class="btn orange pull-right post-submit" style="width:200px">작성</button>
+			<!--submit을 통해 input값을 postupdate로 DB에 저장함-->
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

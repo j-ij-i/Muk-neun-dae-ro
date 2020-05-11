@@ -1,0 +1,37 @@
+<!--들어갈 컨텐츠 내용입니다-->
+<script>
+	init = function(){
+	jarallax = new Jarallax();
+    jarallax.addAnimation('.backgroundimage1',[{progress: "0%", top:"0%"}, {progress: "100%", top: "-50%"}]);
+	//배경의 위치가 스크롤의 처음일때 0%, 스크롤의 끝 지점에서는 -50% 높이에 도달.
+    jarallax.addAnimation('#content',[{progress: "0%", top:"0%"}]); //content id의 움직임을 고정.
+}
+</script>
+  	<div class="content">
+   	<span class="backgroundimage1"></span>
+    <div id="content">
+	<br>
+	<h1 style="text-align:center;" id="eformmain">추천 휴게소 조회하기</h1>
+	<form id="SAform" method="get" action="/external/result">
+		<b id="eformex">출발</b>
+		<select name="start" id="sasearch">
+			{{#each roadFoodList}}
+			<option value="{{this.start}}">{{this.start}}</option>
+			{{/each}}
+		</select>
+		<!--앞서 json으로 작성한 roadData를 roadFoodList로 받아 각각의 값들을 this를 이용해 작성-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b id="eformex">도착</b>
+		<select name="end" id="sasearch">
+			{{#each roadFoodList}}
+			<option value="{{this.end}}">{{this.end}}</option>
+			{{/each}}
+		</select>
+		<!--최대 가능 금액을 form 형태로 받아 버튼을 누르면 금액 값 전송-->
+		<br><br>
+		<b id="eformex">최대 가능 금액</b><input name="price" class="form-control" id="priceinput"/>
+		<br>
+		<button type="submit" id="btn-market-search" class="btn orange" style="width:600px">조회하기</button>
+	</form>
+	  </div>
+</div>

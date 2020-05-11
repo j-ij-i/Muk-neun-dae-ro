@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>먹는대로</title>
+	<base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--CSS-->	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Do+Hyeon|Gaegu|Gothic+A1|Hi+Melody|Jua|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Sans+KR|Noto+Serif+KR|Poor+Story|Song+Myung|Stylish|Yeon+Sung" rel="stylesheet">
+	<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/index.css">
+	<link rel="stylesheet" href="/assets/css/SA.css" />
+
+	<script src="/assets/js/jquery-3.3.1.min.js"></script>
+	<script src="/assets/js/jquery.js"></script>
+	<script src="http://jarallax.com/download/jarallax-min-0.2.js" type="text/javascript"></script>
+</head>
+
+<body onload="init()">
+	<nav class="navbar navbar-default fixed-top  navbar-expand-md navbar-dark " style="background-color: #ffcb49;">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="/" class="nav">
+					<img src="/assets/css/images/logo3.png" width="140px" height="50px">
+				</a>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto"></ul>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+					<a class="nav-link" href="/external/" id="navfont">
+					휴게소조회
+					</a></li>
+					<!--현재 화면의 isUserLogedIn값을 확인해서 메뉴바 값을 다르게 출력해준다.-->
+					{{#if isUserLogedIn}}
+					<li class="nav-item"><a class="nav-link" href="/logout" id="navfont">로그아웃</a></li>
+					<li class="nav-item"><a class="nav-link" href="/external/search" id="navfont">휴게소 검색</a></li>
+					{{else}}
+					<li class="nav-item"><a class="nav-link" href="/signup" id="navfont">회원가입</a></li>
+					<li class="nav-item"><a class="nav-link" href="/login" id="navfont">로그인</a></li>
+					{{/if}}
+					<li class="nav-item"><a class="nav-link" href="/postindex" id="navfont">추천게시판</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div>
+		{{{body}}}
+	</div>
+	<!--Script-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.2/sweetalert2.all.min.js"></script>
+	<script src="/assets/js/index.js"></script>
+</body>
+
+</html>
+

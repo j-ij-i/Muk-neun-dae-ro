@@ -1,0 +1,207 @@
+h1, h2 {
+
+}
+
+.header{
+height: 65px;
+width: 100%;
+background: white;
+
+display: block;
+border-bottom: 3px solid black;
+position: relative;
+z-index: 1;
+padding: 10px 0 0 10px;
+}
+
+h1 {
+font-size: 150%;
+
+margin-top: 5px;
+
+}
+
+
+h2 {
+font-size: 350%;
+top: 140px;
+position:absolute;
+}
+
+body{
+font-family: arial, sans-serif, verdana;
+height:5000px;
+margin:0;
+padding:0;
+}
+
+ul{
+list-style:none;
+}
+
+nav{
+display:block;
+}
+
+nav li{
+float:left;
+
+}
+
+p{
+font-size: 22px;
+width: auto;
+position: absolute;
+left: 130px;
+top: 230px;
+background: rgba(0, 0, 0, 0.2);
+padding: 10px 20px;
+border-radius: 10px;
+color:white;
+}
+
+.content{
+position:fixed;
+width:100%;
+height:100%;
+}
+
+
+.start,.end,.backgroundimage, .backgroundimage1,.backgroundimage2,backgroundimage3,backgroundimage4, .roadimage, .car, .v1,.planet1111{
+display:block;
+position:absolute;
+}
+
+.backgroundimage{
+width:100%;
+height:300%;
+background:url(images/gucken-polaris3.png) top center;
+top:0%;
+left:0%;
+position:absolute;
+z-index:-1;
+}
+
+.backgroundimage1{
+width:100%;
+height:300%;
+background:url(images/background4.png) top center;
+top:0%;
+left:0%;
+position:absolute;
+z-index:-1;
+}
+
+.backgroundimage2{
+width:100%;
+height:2000%;
+background:url(images/menuimage4.png)no-repeat top center;
+top:0%;
+left:0%;
+position:absolute;
+z-index:-1;
+}
+
+.backgroundimage3{
+width:100%;
+height:500%;
+background:url(images/gucken-polaris4.png)no-repeat top center;
+top:0%;
+left:0%;
+position:absolute;
+z-index:-1;
+}
+
+.backgroundimage4{
+width:100%;
+height:500%;
+background:url(images/gucken-polaris5.png)no-repeat top center;
+top:0%;
+left:0%;
+position:absolute;
+z-index:-1;
+}
+
+.start{
+background:url(images/start.png) no-repeat top center;
+background-size: contain;
+width:167px;
+height:153px;
+left:23%;
+top:0%;
+}
+
+.end{
+background:url(images/arrive.png) no-repeat top center;
+background-size: contain;
+width:167px;
+height:153px;
+left:23%;
+top:0%;
+}
+
+.v1{
+width: 600px; height: 700px;
+background:url(images/sa4.png) no-repeat;
+background-size: contain;
+left:65%;
+top:-50%;	
+	
+}
+
+.car{
+background:url(images/car1.png) no-repeat;
+background-size: contain;
+width:167px;
+height:153px;
+left:38%;
+top:0%;
+}
+
+.button{
+background: #142036;
+padding: 5px 10px;
+border: 2px solid #142036;
+border-radius: 5px;
+
+box-shadow: 0 0 10px white;
+margin-left:25px;
+
+background-image: linear-gradient(bottom, rgb(20,32,54) 10%, rgb(97,119,158) 78%);
+background-image: -o-linear-gradient(bottom, rgb(20,32,54) 10%, rgb(97,119,158) 78%);
+background-image: -moz-linear-gradient(bottom, rgb(20,32,54) 10%, rgb(97,119,158) 78%);
+background-image: -webkit-linear-gradient(bottom, rgb(20,32,54) 10%, rgb(97,119,158) 78%);
+background-image: -ms-linear-gradient(bottom, rgb(20,32,54) 10%, rgb(97,119,158) 78%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.1, rgb(20,32,54)),
+	color-stop(0.78, rgb(97,119,158))
+);
+}
+
+.button:hover{
+box-shadow: 0 0 20px white;
+}
+
+.credits{
+position: absolute;
+left: 100%;
+top: 100%;
+margin-top: -46px;
+margin-left: -137px;
+}
+.ran1,.head2,#head3,#head4{
+color:white;
+}
+
+.roadimage{
+	position: absolute;
+	width: 500px; height: 1000px;
+	background:url(images/road.png) no-repeat;
+	background-size: contain;
+	left : 20%;
+	top:0%;	
+}

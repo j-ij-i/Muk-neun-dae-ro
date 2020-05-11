@@ -1,0 +1,60 @@
+ 	 <script>
+	init = function(){
+jarallax = new Jarallax();
+    jarallax.addAnimation('.backgroundimage4',[{progress: "0%", top:"0%"}, {progress: "100%", top: "-50%"}]);	
+    jarallax.addAnimation('#board',[{progress: "0%", top:"10%"},{progress: "100%", top:"-30%"}]);
+}
+		
+</script>
+<!--게시글 보기-->
+<div class="content">
+	<span class="backgroundimage4"></span>
+	<div id="board" class="container">
+		<!--postindex에서 _id값을 받아와서 _id값의 제목, 작성자, 내용, 사진을 불러온다.-->
+			<table class="table">
+				<thead>
+					<tr>
+						<th>글번호</th>
+						<th width="45%">제목</th>
+						<th>작성자</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{post.numId}}</td>
+						<td>{{post.title}}</td>
+						<td>{{post.author}}</td>
+						<td>{{post.views}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="contentarea">
+			<div >
+				{{#if post.photo}}
+				<img class="img-responsive" src="/uploads/{{post.photo.filename}}" alt="...">
+				{{else}}
+				<img class="img-responsive" src="/assets/css/images/empty.png" alt="...">
+				{{/if}}
+			</div>
+			<!--게시글에 사진이 없으면 empty파일을 출력한다-->
+			<div>
+				{{post.content}}
+			</div>
+			</div>
+			<hr>
+			<div class="action">
+			<script>
+			var j = '{{post.author}}';
+			var i = '{{user}}';	
+			if(i==j){
+				document.write("<a href='/postedit/{{post._id}}'   role='button'><button type='submit' class='btn green pull-right' >수정</button></a>");		   
+                 document.write("<a href='/postdelete/{{post._id}}' ><button class='btn red pull-right' type='submit' >삭제</button></a>");    							   
+			}
+			//작성자와 로그인 된 아이디를 비교해서 같으면 수정, 삭제버튼을 생성, 다르면 나타나지 않는다. 
+			</script>
+			<a href="/postindex" role="button"><button class="btn blue gradient  pull-right">목록</button></a>
+			<!---->
+			</div>
+		</div>
+	</div>

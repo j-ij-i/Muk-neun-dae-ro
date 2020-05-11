@@ -1,0 +1,61 @@
+<script>
+	var num = 0;
+	{{#each roadFoodInfo}}
+		num=num+1;
+	{{/each}}
+	//휴게소 음식의 리스트 갯수를 num값으로 받음.
+	init = function() {
+		var i = num*10;
+		jarallax = new Jarallax();
+		jarallax.addAnimation('.backgroundimage2', [{
+			progress: "0%",
+			top: "0%"
+		}, {
+			progress: "100%",
+			top: "-500%"
+		}]);
+		//배경이미지의 스크롤 속도 조정.
+		//배경의 위치가 스크롤의 처음일때 0%, 스크롤의 끝 지점에서는 -500% 높이에 도달.
+		jarallax.addAnimation('#menu', [{
+			progress: "0%",
+			top: "38%"
+		}, {
+			progress: "100%",
+			top: "-"+i+"%"
+		}]);
+		//리스트 갯수의 10을 곱한 값을 받아서 갯수에 따라서 메뉴가 나오는 스크롤의 속도를 조절하게 한다.
+	}
+</script>
+<div class="content">
+	<span class="backgroundimage2"></span>
+	<div id="menu">
+<h1 id="menuarea">
+<script>
+	var i = 1;
+	{{#each roadFoodInfo}}
+	if(i==1)
+		{
+	document.write("{{this.restname}}");
+	i+=1;
+	}
+	{{/each}}
+	//휴게소 이름을 출력
+</script>
+메뉴
+</h1>
+<a href="/" class="btn blue pull-right">목록으로</a>
+	<br><br>
+		<!--DB에서 받아온 휴게소 메뉴의 정보를 화면에 출력한다.-->
+		{{#each roadFoodInfo}}
+		<h1 id="menumain">{{this.foodname}}
+		<b id="menuprice">{{this.foodcost}}</b></h1>
+		<b id="menuexp">
+		{{this.etc}}
+		</b><br>
+		<b id="menuetc">
+			{{this.foodmaterial}}
+			<br><br>
+		</b>
+		{{/each}}
+	</div>
+</div>

@@ -1,0 +1,104 @@
+<!--들어갈 컨텐츠 내용입니다-->
+<script>
+	var num = 0;
+ 	{{#each roadFoodResult}}
+		{{#if this.batchMenu}}
+           {{#if this.salePrice}}
+			num=num+1;
+           {{/if}}
+		{{/if}}
+	{{/each}}
+	//검색한 휴게소 음식 추천리스트를 데이터리스트의 갯수를 num에 받음. 
+
+	init = function(){
+      jarallax = new Jarallax();
+	  var i = num;
+      jarallax.setDefault('h2, p', {opacity:'0'});
+	  jarallax.setDefault('p', {marginLeft:'-1000px'});
+	//휴게소이름, 음식이름, 정보를 화면이 맨처음 시작할때의 위치를 -1000으로 정의.
+
+    jarallax.addAnimation('.car',[{progress: "0%", top:"0%"}, {progress: "100%", top: "80%"}]);
+	//자동차의 위치가 스크롤의 처음일때 0%, 스크롤의 끝 지점에서는 80% 높이에 도달.
+	jarallax.addAnimation('.start',[{progress: "0%", top:"10%"}, {progress: "100%", top: "-110%"}]);
+	//시작 표지판이 스크롤의 처음일때 10% 높이, 스크롤의 끝 지점에서는 -110% 높이
+	jarallax.addAnimation('.end',[{progress: "0%", top:"180%"}, {progress: "100%", top: "80%"}]);
+	//도착 표지판이 스크롤의 처음일때 180% 높이, 스크롤의 끝 지점에서는 80% 높이
+		
+	var mnum = 100;
+	var pnum = 100+(300*i);
+	for(var j = 1; j<=i; j++)
+	{		
+		var Str ='.planet'+j;
+		jarallax.addAnimation(Str,[{progress: "0%", top:"-"+mnum+"%"}, {progress: "100%", top: pnum}]);
+		mnum += 300;
+		pnum -= 300;
+	}
+	//휴게소 이미지를 데이터 리스트의 갯수(i)에 따라서 class생성 후 일정한 간격에 클래스간 따른 속도조절
+	
+    jarallax.addAnimation('.backgroundimage',[{progress: "0%", top:"0%"}, {progress: "100%", top: "-50%"}]);
+	//배경이미지 스크롤의 처음일때 180% 높이, 스크롤의 끝 지점에서는 80% 높이
+	
+	var per1 = (90/i)/3;
+	for(var j = 1; j<=i; j++)
+	{
+		var Htr ='#SAname'+j;
+		if((j-1) == 0)
+		{
+			var per2 = 0;
+		}
+		else
+			var per2 = 90*((j-1)/i);
+	  jarallax.addAnimation(Htr,[{progress: per2+"%", left:"-800px"}, {progress: (per2+(per1*1))+"%", left: "100px"}]);
+      jarallax.addAnimation(Htr,[{progress: (per2+(per1*1))+"%", left:"100px"}, {progress: (per2+(per1*3))+"%", left: "150px"}]);
+      jarallax.addAnimation(Htr,[{progress: per2+"%", opacity:"1"}, {progress: (per2+(per1*2))+"%", opacity:"1"}]);
+      jarallax.addAnimation(Htr,[{progress: (per2+(per1*2))+"%", opacity:"1"}, {progress: (per2+(per1*3))+"%", opacity:"0"}]);
+	}
+	//받아오는 휴게소리스트 갯수만큼 휴게소이름의 id생성 후, 갯수만큼 스크롤을 등분하고, 등분한 값에서 3등분을 하여서 자연스러운 움직임을 생성 
+	
+	var pt1 = (90/i)/6; 
+	for(var j = 1; j<=i; j++)
+	{
+		var Ptr ='#SAinfo'+j; 
+		if((j-1) == 0)
+		{
+			var pt2 = 0;
+		}
+		else
+			var pt2 = 90*((j-1)/i);
+	  jarallax.addAnimation(Ptr,[{progress:(pt2+(pt1*1))+"%", opacity:"0"}, {progress:( pt2+(pt1*2))+"%", opacity:"1"}]);
+      jarallax.addAnimation(Ptr,[{progress:(pt2+(pt1*2))+"%", opacity:"1"}, {progress: (pt2+(pt1*4))+"%"}]);
+      jarallax.addAnimation(Ptr,[{progress: (pt2+(pt1*4))+"%", opacity:"1"}, {progress: (pt2+(pt1*6))+"%", opacity:"0"}]);
+      jarallax.addAnimation(Ptr,[{progress: (pt2+(pt1*1))+"%", marginLeft:"0"}, {progress: (pt2+(pt1*6))+"%"}]);
+	}
+	//받아오는 휴게소리스트 갯수만큼 휴게소정보의 id생성 후, 갯수만큼 스크롤을 등분하고, 등분한 값에서 3등분을 하여서 자연스러운 움직임을 생성 
+}
+
+</script>
+  <div class="content"> <!-- -->
+	<span class="roadimage"></span> <!--도로 span 정의--> 	
+	<span class="backgroundimage"></span><!--배경 span 정의--> 	
+	<span class="car"></span><!--자동차 span 정의--> 		
+	<span class="start"></span><!--시작점 span 정의-->  	
+    <span class="end"></span><!--끝점 span 정의--> 
+ 		  <script>
+			  var i = 1;
+               	{{#each roadFoodResult}}
+                   {{#if this.batchMenu}}
+                    {{#if this.salePrice}}
+			  		document.write("<a href='external/info/{{this.serviceAreaName}}'><span class= 'planet"+i+" v1' ></span><a>");
+					//휴게소 그림을 누르면 휴게소 이름으로 info로 보내진다.
+					var qtr ='SAname'+i;
+			  		var wtr ='SAinfo'+i;
+			  		document.write("<h2 id= "+qtr+" class = 'ran1'>{{this.serviceAreaName}}</h2>");
+					document.write("<p id= "+wtr+"  class = 'ran2'>");	
+                    document.write("{{this.routeName}}<br>");
+					document.write("{{this.batchMenu}}<br>");
+					document.write("{{this.salePrice}}<br>");
+					document.write("</p>");
+			  		//휴게소 리스트의 갯수만큼의 p태그, h2태그를 생성하고, 거기에 휴게소 정보들을 각각 넣어준다.
+					i = i+1;
+                     {{/if}}
+                   {{/if}}
+            {{/each}}
+         </script>  
+</div>
