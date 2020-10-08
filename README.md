@@ -1,10 +1,21 @@
-## 휴게소 조회 웹사이트 먹는대로 (Muk-neun-dae-ro!)
+# 휴게소 조회 웹사이트 먹는대로 (Muk-neun-dae-ro!)
 
+## 1. 개발 배경
 '먹는대로'는 가장 먼저 긴 고속도로 운전으로 인해 피곤한 사람들에게 최소의 시간으로 최선의 음식 선택을 하기 위해 만들었습니다. 가장 먼저 출발과 도착을 정해 고속도로를 알고 그 고속도로에 존재하는 여러 휴게소의 추천 메뉴 및 다른 메뉴의 음식 정보를 알 수 있어 음식을 선택할 때 고민하지 않고 편하게 먹을 수 있게 하였습니다.
  먹는대로는 자신이 타는 고속도로에 있는 휴게소만 검색해서 알 수 있는 것이 아니라 검색과 게시판을 통해 더 많은 정보를 알게해주는 고속도로 음식 전문 웹사이트로써 이런 기능들을 가지고 있습니다.
 
+## 2. 사용 기술
+### DataBase
 
-## 기능 소개
+![image](https://user-images.githubusercontent.com/46212602/95480405-d49a7900-09c6-11eb-8e05-efcea0885483.png)
+
+### Language 
+
+![image](https://user-images.githubusercontent.com/46212602/95481119-9d789780-09c7-11eb-9aa2-4f5d3a2252e0.png)
+![image](https://user-images.githubusercontent.com/46212602/95481126-9f425b00-09c7-11eb-9e04-9884927ed7b0.png)
+![image](https://user-images.githubusercontent.com/46212602/95481137-a2d5e200-09c7-11eb-9c5f-cde1dd4e237c.png)
+![image](https://user-images.githubusercontent.com/46212602/95481142-a4070f00-09c7-11eb-9847-4406e3dcf308.png)
+## 3. 기능
 
 ### 1. 출발과 도착에 따른 휴게소의 음식정보
 출발과 도착을 설정하면 그에 따른 고속도로가 나오게 되고 그 고속도로에 존재하는 휴게소들의 대표 음식을 나열해 아주 간단하게 선택하게 하였고 제한 금액도 같이 줄 수 있어 싸고 맛있는 음식을 고를 수 있도록 했습니다.
