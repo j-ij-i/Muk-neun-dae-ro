@@ -9,7 +9,7 @@
 
 ![image](https://user-images.githubusercontent.com/46212602/95480405-d49a7900-09c6-11eb-8e05-efcea0885483.png)
 
-### Language 
+### Languages
 
 ![image](https://user-images.githubusercontent.com/46212602/95481119-9d789780-09c7-11eb-9aa2-4f5d3a2252e0.png)
 ![image](https://user-images.githubusercontent.com/46212602/95481126-9f425b00-09c7-11eb-9e04-9884927ed7b0.png)
